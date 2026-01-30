@@ -1,273 +1,266 @@
-<!DOCTYPE html>
-<html lang="uk">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тестові Завдання QA</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
-        .container { background: white; padding: 20px; border-radius: 8px; box-sha;dow: 0 0 10px rgba(0, 0, 0, 0.1); margin-bottom: 20px; }
-        h2 { color: #333; }
-        label { display: block; margin-top: 10px; }
-        input, select, button { padding: 8px; margin: 5px 0; width: 400px; box-sizing: border-box;display: block;}
-        table, th, td {
-  border: 1px solid black;
-}
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISTQB – Metrics & Automation Tool MCQ</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.45; margin: 0; padding: 24px; background: #f6f7fb; }
+    .card { max-width: 980px; margin: 0 auto; background: #fff; border: 1px solid #e6e6ef; border-radius: 14px; padding: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+    h1 { font-size: 20px; margin: 0 0 10px; }
+    .muted { color: #555; font-size: 13px; margin: 8px 0 0; }
+    .quiz-header { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+    .pill { background: #eef2ff; border: 1px solid #e6e6ef; border-radius: 999px; padding: 6px 10px; font-size: 13px; }
+    .question { display: none; }
+    .question.active { display: block; }
+    .q-title { font-size: 16px; margin: 6px 0 10px; }
+    .box { border: 1px solid #e6e6ef; border-radius: 12px; padding: 12px; background: #fafbff; margin: 12px 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    .options { margin-top: 10px; }
+    .option { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; border: 1px solid #e6e6ef; border-radius: 12px; margin: 10px 0; background: #fff; cursor: pointer; }
+    .option:hover { background: #f3f6ff; }
+    .option input { margin-top: 3px; }
+    code { background: #f1f1f1; padding: 2px 6px; border-radius: 6px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+    button { border: 0; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; }
+    .primary { background: #1f6feb; color: #fff; }
+    .secondary { background: #eaeef5; color: #111; }
+    .danger { background: #ffe8e8; color: #7a0b0b; border: 1px solid #ffd4d4; }
+    .result { margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px solid #e6e6ef; background: #fbfbfb; }
+    .ok { border-color: #b7ebc6; background: #f1fff5; }
+    .bad { border-color: #ffd4d4; background: #fff5f5; }
+    .nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 14px; }
+    .nav button { flex: 1; }
+    .footer { margin-top: 16px; font-size: 13px; color: #555; }
+  </style>
 </head>
+
 <body>
-    <h1>Практичне заняття</h1>
-    
-    <div class="container">
-        <h2>Завдання 1: Оцінювання екзаменаційних робіт.</h2>
-        </h3>Ви тестуєте машину, яка оцінює екзаменаційні роботи та присвоює оцінки.
-            Відповідно до отриманого балу оцінки розподіляються так:</h3>
-        <ul>
-            <li>1-49 = F</li>
-            <li>50-59 = E</li>
-            <li>60-69 = D</li>
-            <li>70-79 = C</li>
-            <li>80-89 = B</li>
-            <li>90-100 = A</li>
-        </ul>
-        <h3>Якщо застосувати еквівалентне розбиття (equivalence partitioning), скільки тестових випадків потрібно
-            для досягнення мінімального покриття тестами?
-        </h3>
-        <p>Введіть бал для отримання оцінки:</p>
-        <input type="number" id="examScore" min="0" max="3">
-        <button onclick="calculateGrade()">Отримати оцінку</button>
-        <p id="gradeResult"></p>
+  <main class="card" aria-labelledby="title">
+    <div class="quiz-header">
+      <div>
+        <h1 id="title">ISTQB MCQ – Metrics & Automation Tool Retirement</h1>
+        <p class="muted">Select ONE option per question. Click <strong>Check</strong> to validate. Incorrect answers show an error message.</p>
+      </div>
+      <div class="pill" id="progressPill">Question 1 of 2</div>
     </div>
 
-    <div class="container">
-        <h2>Завдання 2: Контроль температури</h2>
-        <h3>Ви тестуєте термостат для системи опалення/кондиціювання. Вам надали такі вимоги:</h3>
-         <ul>
-             <li>Якщо температура нижче 70 фаренгейта, увімкнути систему опалення.</li>
-             <li>Якщо температура вище 75 фаренгейта, увімкнути систему кондиціювання.</li>
-             <li>Якщо температура знаходиться в межах від 70 до 75 фаренгейтів включно, увімкнути лише вентилятор.</li>
-         </ul>
-        <h3>Який із наведених наборів тестових значень температури є мінімальним для досягнення 100% покриття двохзначного аналізу граничних значень?</h3>
+    <!-- Question 1 -->
+    <section class="question active" id="q1" aria-label="Question 1">
+      <div class="q-title">
+        <strong>Q1.</strong> As a test manager, you are required to report on different metrics during various test activities.
+        Which mapping of metrics to test activities is most appropriate?
+      </div>
 
-        <p>Введіть поточну температуру:</p>
-        <input type="number" id="temperature">
-        <button onclick="checkTemperature()">Перевірити</button>
-        <p id="temperatureResult"></p>
-    </div>
+      <div class="grid">
+        <div class="box">
+          <strong>Metrics</strong>
+          <ul>
+            <li><strong>1.</strong> Product risk coverage</li>
+            <li><strong>2.</strong> Total number of resolved defects vs. total number of found defects</li>
+            <li><strong>3.</strong> Percentage of actual automated vs. planned automated test cases</li>
+            <li><strong>4.</strong> Ratio of actual vs. planned effort (hours) for test activities</li>
+          </ul>
+        </div>
 
-    <div class="container">
-        <h2>Завдання 3: Таблиця прийняття рішень</h2>
-       <h3> Вам надали наступні умови та результати, які випливають із комбінацій цих умов. Використовуючи техніку таблиці
-           прийняття рішень (decision table technique), яку мінімальну кількість тестових випадків потрібно для тестування цих умов?</h3>
-<h4>Умови:</h4>
-<ul>
-    <li>Дійсна готівка</li>
-    <li>Дійсна кредитна картка</li>
-    <li>Дійсна дебетова картка</li>
-    <li>Дійсний PIN-код</li>
-    <li>Банк приймає операцію</li>
-    <li>Валідний вибір</li>
-    <li>Товар є в наявності</li>
-</ul>
-    <h4>Результати:</h4>
-<ul>
-    <li>Відхилити готівку</li>
-    <li>Відхилити картку</li>
-    <li>Повідомлення про помилку</li>
-    <li>Повернути готівку</li>
-    <li>Повернути кошти на картку</li>
-    <li>Продати товар</li>
-</ul>
-    </div>
+        <div class="box">
+          <strong>Test activities</strong>
+          <ul>
+            <li><strong>A)</strong> Test planning</li>
+            <li><strong>B)</strong> Test monitoring and test control</li>
+            <li><strong>C)</strong> Test completion</li>
+            <li><strong>D)</strong> Test execution</li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="container">
-        <h2>Завдання 4: Логін</h2>
-        <h3>Користувач повинен увійти в систему, використовуючи дійсне ім’я користувача та пароль.
-            Якщо він тричі введе неправильну комбінацію, то отримає повідомлення про помилку і зможе повторити спробу лише через 10 хвилин.
-            Тест завершується, коли користувач успішно входить у систему. Скільки тестових випадків потрібно для забезпечення 100% покриття
-            переходів станів (state transition coverage)?</h3>
-    </div>
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="ans1" value="a" />
+          <div><strong>a)</strong> <code>1B, 2B, 3C, 4A</code></div>
+        </label>
 
-    <div class="container">
-        <h2>Завдання 5: Вартість доставки</h2>
-        <h3>Ви тестуєте систему зважування, яка визначає тарифи на доставку для регіонального онлайн-дистриб’ютора автозапчастин.
-            Згідно з регуляторними вимогами, відправлення не можуть перевищувати 100 фунтів. Ви хочете включити аналіз граничних
-            значень як частину вашого тест-дизайну чорної скриньки.
-             Скільки тестів вам потрібно виконати, щоб досягти 100% покриття двозначного аналізу граничних значень?</h3>
+        <label class="option">
+          <input type="radio" name="ans1" value="b" />
+          <div><strong>b)</strong> <code>1A, 2B, 3C, 4D</code></div>
+        </label>
 
-    <table>
-  <tr>
-    <th>Вага (фунти)</th>
-    <th>Вартість доставки ($)</th>
-  </tr>
-  <tr>
-    <td>0 – 10</td>
-    <td>5.00</td>
-  </tr>
-  <tr>
-    <td>11 – 25</td>
-    <td>7.50</td>
-  </tr>
-        <tr>
-    <td>26 – 50</td>
-    <td>12.00</td>
-  </tr>
-   <tr>
-    <td>51 – 100</td>
-    <td>17.00</td>
-  </tr>
-</table>
-        <p>Введіть вагу відправлення (фунти):</p>
-        <input type="number" id="weight" min="0" max="100">
-        <button onclick="calculateShipping()">Розрахувати</button>
-        <p id="shippingResult"></p>
-    </div>
+        <label class="option">
+          <input type="radio" name="ans1" value="c" />
+          <div><strong>c)</strong> <code>1B, 2B, 3C, 4B</code></div>
+        </label>
 
-    <div class="container">
-        <h2>Завдання 6: Переходи станів</h2>
-        <h3>Ви тестуєте транзакцію в електронній комерції, яка має такі стани та переходи:</h3>
-<ul>
-    <li>Вхід (недійсний) → Вхід</li>
-     <li>Вхід → Пошук</li>
-     <li>Пошук → Пошук</li>
-     <li>Пошук → Кошик</li>
-     <li>Кошик → Пошук</li>
-     <li>Кошик → Оформлення замовлення</li>
-     <li>Оформлення замовлення → Пошук</li>
-     <li>Оформлення замовлення → Вихід</li>
-</ul>
-<h3>Для діаграми переходів станів скільки переходів слід відобразити?</h3>
-    </div>
- <div class="container">
-        <h2>Завдання 7: Нова система управління взаємовідносинами з клієнтами (CRM)</h2>
-    <h3>Ваш улюблений магазин з прокату велосипедів запровадив нову систему управління взаємовідносинами з клієнтами (CRM) і попросив вас,
-        одного з найвідданіших членів, протестувати її.
- Реалізовані функції такі:
-Будь-хто може орендувати велосипед, але члени отримують знижку 20%.
-Однак, якщо строк повернення пропущено, знижка більше не застосовується.
-Після 15 оренд члени отримують подарунок – футболку.
-Таблиця прийняття рішень, що описує реалізовані функції, виглядає наступним чином:</h3>
-   <table>
-  <tr>
-    <th>Conditions</th>
-    <th>R1</th>
-      <th>R2</th>
-      <th>R3</th>
-      <th>R4</th>
-      <th>R5</th>
-      <th>R6</th>
-      <th>R7</th>
-      <th>R8</th>
-  </tr>
-  <tr>
-    <td>Being a member</td>
-    <td>T</td>
-      <td>T</td>
-      <td>T</td>
-      <td>T</td>
-      <td>F</td>
-      <td>F</td>
-      <td>F</td>
-      <td>F</td>    
-  </tr>
-  <tr>
-    <td>Missed deadline</td>
-    <td>T</td>
-      <td>F</td>
-      <td>T</td>
-      <td>F</td>
-      <td>T</td>
-      <td>F</td>
-      <td>F</td>
-      <td>T</td> 
-  </tr>
-    <tr>
-    <td>15th rental</td>
-    <td>F</td>
-      <td>F</td>
-      <td>T</td>
-      <td>T</td>
-      <td>F</td>
-      <td>F</td>
-      <td>T</td>
-      <td>T</td> 
-  </tr>
-   <tr>
-     <td>Actions</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td> 
-  </tr>
-       <tr>
-     <td>20% discount</td>
-      <td></td>
-      <td>X</td>
-      <td></td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td> 
-  </tr>
-        <tr>
-     <td>Gift T-Shirt</td>
-      <td></td>
-      <td></td>
-      <td>X</td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>X</td> 
-  </tr>
-</table>
-     <h3>Базуючись ТІЛЬКИ на описі функціоналу системи управління взаємовідносинами з клієнтами,
-         яке з наведених правил описує неможливу ситуацію?</h3>
- </div>
-     <div class="container">
-        <h2>Завдання 8: Тестування системи</h2>
-         <h3>Ви тестуєте систему, життєвий цикл якої змодельований діаграмою переходів станів, показаною нижче.
-             Система починає роботу в стані INIT і завершує її в стані OFF.</h3>
-        <img src="Screenshot (27).png" alt="Діаграма переходів станів" width="300" height="250">
-         <h3>Яка МІНІМАЛЬНА кількість тестових випадків, необхідна для покриття всіх допустимих переходів?</h3>
- </div>
+        <label class="option">
+          <input type="radio" name="ans1" value="d" />
+          <div><strong>d)</strong> <code>1C, 2D, 3A, 4B</code></div>
+        </label>
+      </div>
 
-    <script>
-        function calculateGrade() {
-            let score = document.getElementById("examScore").value;
-            let grade;
-            if (score >= 90) grade = "A";
-            else if (score >= 80) grade = "B";
-            else if (score >= 70) grade = "C";
-            else if (score >= 60) grade = "D";
-            else if (score >= 50) grade = "E";
-            else grade = "F";
-            document.getElementById("gradeResult").textContent = "Ваша оцінка: " + grade;
+      <div class="actions">
+        <button class="primary" type="button" data-check="1">Check</button>
+        <button class="secondary" type="button" data-reset="1">Reset</button>
+      </div>
+
+      <div id="result1" class="result" role="status" aria-live="polite">
+        Select an option and click <strong>Check</strong>.
+      </div>
+
+      <div class="nav">
+        <button class="secondary" type="button" disabled>← Prev</button>
+        <button class="primary" type="button" data-next>Next →</button>
+      </div>
+    </section>
+
+    <!-- Question 2 -->
+    <section class="question" id="q2" aria-label="Question 2">
+      <div class="q-title">
+        <strong>Q2.</strong> For your current project, the available custom-built tool does not meet the requirements of your
+        test automation effort. Within your company, there is an open-source test automation tool successfully
+        being used for identical requirements.
+        <br><br>
+        If you choose the same open-source tool, which activity should happen as a first step when retiring the current
+        custom-built tool in order to show the value of the new tool as quickly as possible?
+      </div>
+
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="ans2" value="a" />
+          <div><strong>a)</strong> The custom-built tool must be maintained and converted to the new environment.</div>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="ans2" value="b" />
+          <div><strong>b)</strong> The regression test scripts of the custom-built tool must be converted to the new tool.</div>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="ans2" value="c" />
+          <div><strong>c)</strong> The backup and restore functionalities of the custom-built tool must be maintained.</div>
+        </label>
+
+        <label class="option">
+          <input type="radio" name="ans2" value="d" />
+          <div><strong>d)</strong> All test scripts of the custom-built tool must be converted to the new tool.</div>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="primary" type="button" data-check="2">Check</button>
+        <button class="secondary" type="button" data-reset="2">Reset</button>
+      </div>
+
+      <div id="result2" class="result" role="status" aria-live="polite">
+        Select an option and click <strong>Check</strong>.
+      </div>
+
+      <div class="nav">
+        <button class="secondary" type="button" data-prev>← Prev</button>
+        <button class="secondary" type="button" disabled>Next →</button>
+      </div>
+
+      <div class="footer">
+        Tip: If you want this to behave like Kahoot (one question per screen with a timer), tell me and I’ll add a timer + auto-next.
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Correct answers:
+    // Q1: c) Hence the correct answer is c) 1B, 2B, 3C, 4B.
+    // Q2: b) is correct (convert regression scripts first).
+    const correct = { 1: "c", 2: "b" };
+
+    const q1El = document.getElementById("q1");
+    const q2El = document.getElementById("q2");
+    const progressPill = document.getElementById("progressPill");
+
+    function showQuestion(n) {
+      q1El.classList.toggle("active", n === 1);
+      q2El.classList.toggle("active", n === 2);
+      progressPill.textContent = `Question ${n} of 2`;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function getSelected(qNum) {
+      const checked = document.querySelector(`input[name="ans${qNum}"]:checked`);
+      return checked ? checked.value : null;
+    }
+
+    function setResult(qNum, html, status) {
+      const el = document.getElementById(`result${qNum}`);
+      el.innerHTML = html;
+      el.classList.remove("ok", "bad");
+      if (status === "ok") el.classList.add("ok");
+      if (status === "bad") el.classList.add("bad");
+    }
+
+    function resetQuestion(qNum) {
+      const checked = document.querySelector(`input[name="ans${qNum}"]:checked`);
+      if (checked) checked.checked = false;
+      setResult(qNum, 'Select an option and click <strong>Check</strong>.', null);
+    }
+
+    // Check handlers
+    document.querySelectorAll("[data-check]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const qNum = Number(btn.getAttribute("data-check"));
+        const selected = getSelected(qNum);
+
+        if (!selected) {
+          setResult(qNum, "Please select one option first.", "bad");
+          return;
         }
 
-        function checkTemperature() {
-            let temp = document.getElementById("temperature").value;
-            let result;
-            if (temp < 70) result = "Увімкнено опалення";
-            else if (temp > 75) result = "Увімкнено кондиціювання";
-            else result = "Увімкнено лише вентилятор";
-            document.getElementById("temperatureResult").textContent = result;
+        if (selected === correct[qNum]) {
+          if (qNum === 1) {
+            setResult(qNum, `
+              <strong>Correct ✅</strong><br><br>
+              Hence the correct answer is <strong>c)</strong> <code>1B, 2B, 3C, 4B</code>.
+            `, "ok");
+          } else {
+            setResult(qNum, `
+              <strong>Correct ✅</strong><br><br>
+              <strong>b) is correct.</strong> This answer concerns retirement, as there are probably lots of existing scripts,
+              and regression test scripts are the ones used most often.
+              <ul>
+                <li>Regression test scripts are used most often to verify functionality and performance after changes/updates.</li>
+                <li>Converting regression scripts first enables a fast pilot/proof of concept.</li>
+                <li>You can quickly compare results and efficiency of the new tool vs. the old tool.</li>
+              </ul>
+            `, "ok");
+          }
+        } else {
+          // Wrong selection
+          if (qNum === 1) {
+            setResult(qNum, `
+              <strong>Incorrect ❌</strong><br>
+              Please try again. Remember: monitoring & control focuses on tracking progress vs plan, and completion summarizes outcomes.
+            `, "bad");
+          } else {
+            setResult(qNum, `
+              <strong>Incorrect ❌</strong><br>
+              Please try again. To show value quickly, start with the scripts executed most frequently.
+            `, "bad");
+          }
         }
+      });
+    });
 
-        function calculateShipping() {
-            let weight = document.getElementById("weight").value;
-            let cost;
-            if (weight <= 10) cost = "$5.00";
-            else if (weight <= 25) cost = "$7.50";
-            else if (weight <= 50) cost = "$12.00";
-            else cost = "$17.00";
-            document.getElementById("shippingResult").textContent = "Вартість доставки: " + cost;
-        }
-    </script>
+    // Reset handlers
+    document.querySelectorAll("[data-reset]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const qNum = Number(btn.getAttribute("data-reset"));
+        resetQuestion(qNum);
+      });
+    });
+
+    // Navigation
+    document.querySelector("[data-next]").addEventListener("click", () => showQuestion(2));
+    document.querySelector("[data-prev]").addEventListener("click", () => showQuestion(1));
+  </script>
 </body>
 </html>
+
+
+    
