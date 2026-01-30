@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ISTQB – Metrics & Automation Tool MCQ</title>
+  <title>ISTQB – Метрики та виведення інструменту з експлуатації</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.45; margin: 0; padding: 24px; background: #f6f7fb; }
     .card { max-width: 980px; margin: 0 auto; background: #fff; border: 1px solid #e6e6ef; border-radius: 14px; padding: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
@@ -26,7 +26,6 @@
     button { border: 0; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; }
     .primary { background: #1f6feb; color: #fff; }
     .secondary { background: #eaeef5; color: #111; }
-    .danger { background: #ffe8e8; color: #7a0b0b; border: 1px solid #ffd4d4; }
     .result { margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px solid #e6e6ef; background: #fbfbfb; }
     .ok { border-color: #b7ebc6; background: #f1fff5; }
     .bad { border-color: #ffd4d4; background: #fff5f5; }
@@ -40,37 +39,42 @@
   <main class="card" aria-labelledby="title">
     <div class="quiz-header">
       <div>
-        <h1 id="title">ISTQB MCQ – Metrics & Automation Tool Retirement</h1>
-        <p class="muted">Select ONE option per question. Click <strong>Check</strong> to validate. Incorrect answers show an error message.</p>
+        <h1 id="title">ISTQB MCQ – Метрики та виведення інструменту автоматизації</h1>
+        <p class="muted">
+          Оберіть <strong>ОДИН</strong> варіант відповіді для кожного питання.
+          Натисніть <strong>Перевірити</strong>, щоб отримати результат.
+          У разі помилки з’явиться повідомлення.
+        </p>
       </div>
-      <div class="pill" id="progressPill">Question 1 of 2</div>
+      <div class="pill" id="progressPill">Питання 1 з 2</div>
     </div>
 
-    <!-- Question 1 -->
-    <section class="question active" id="q1" aria-label="Question 1">
+    <!-- Питання 1 -->
+    <section class="question active" id="q1" aria-label="Питання 1">
       <div class="q-title">
-        <strong>Q1.</strong> As a test manager, you are required to report on different metrics during various test activities.
-        Which mapping of metrics to test activities is most appropriate?
+        <strong>Питання 1.</strong>
+        Як тест-менеджер, ви повинні звітувати за різними метриками під час різних тестових активностей.
+        Яке зіставлення метрик і тестових активностей є найбільш коректним?
       </div>
 
       <div class="grid">
         <div class="box">
-          <strong>Metrics</strong>
+          <strong>Метрики</strong>
           <ul>
-            <li><strong>1.</strong> Product risk coverage</li>
-            <li><strong>2.</strong> Total number of resolved defects vs. total number of found defects</li>
-            <li><strong>3.</strong> Percentage of actual automated vs. planned automated test cases</li>
-            <li><strong>4.</strong> Ratio of actual vs. planned effort (hours) for test activities</li>
+            <li><strong>1.</strong> Покриття ризиків продукту</li>
+            <li><strong>2.</strong> Загальна кількість виправлених дефектів vs загальна кількість знайдених дефектів</li>
+            <li><strong>3.</strong> Відсоток фактично автоматизованих vs запланованих автоматизованих тест-кейсів</li>
+            <li><strong>4.</strong> Співвідношення фактичних vs запланованих зусиль (години) для тестових активностей</li>
           </ul>
         </div>
 
         <div class="box">
-          <strong>Test activities</strong>
+          <strong>Тестові активності</strong>
           <ul>
-            <li><strong>A)</strong> Test planning</li>
-            <li><strong>B)</strong> Test monitoring and test control</li>
-            <li><strong>C)</strong> Test completion</li>
-            <li><strong>D)</strong> Test execution</li>
+            <li><strong>A)</strong> Планування тестування</li>
+            <li><strong>B)</strong> Моніторинг і контроль тестування</li>
+            <li><strong>C)</strong> Завершення тестування</li>
+            <li><strong>D)</strong> Виконання тестів</li>
           </ul>
         </div>
       </div>
@@ -98,77 +102,77 @@
       </div>
 
       <div class="actions">
-        <button class="primary" type="button" data-check="1">Check</button>
-        <button class="secondary" type="button" data-reset="1">Reset</button>
+        <button class="primary" type="button" data-check="1">Перевірити</button>
+        <button class="secondary" type="button" data-reset="1">Скинути</button>
       </div>
 
       <div id="result1" class="result" role="status" aria-live="polite">
-        Select an option and click <strong>Check</strong>.
+        Оберіть варіант і натисніть <strong>Перевірити</strong>.
       </div>
 
       <div class="nav">
-        <button class="secondary" type="button" disabled>← Prev</button>
-        <button class="primary" type="button" data-next>Next →</button>
+        <button class="secondary" type="button" disabled>← Назад</button>
+        <button class="primary" type="button" data-next>Далі →</button>
       </div>
     </section>
 
-    <!-- Question 2 -->
-    <section class="question" id="q2" aria-label="Question 2">
+    <!-- Питання 2 -->
+    <section class="question" id="q2" aria-label="Питання 2">
       <div class="q-title">
-        <strong>Q2.</strong> For your current project, the available custom-built tool does not meet the requirements of your
-        test automation effort. Within your company, there is an open-source test automation tool successfully
-        being used for identical requirements.
+        <strong>Питання 2.</strong>
+        У поточному проєкті наявний власноруч створений інструмент не відповідає вимогам автоматизації тестування.
+        В компанії вже успішно використовується open-source інструмент для аналогічних вимог.
         <br><br>
-        If you choose the same open-source tool, which activity should happen as a first step when retiring the current
-        custom-built tool in order to show the value of the new tool as quickly as possible?
+        Якщо ви обираєте цей open-source інструмент, яка дія має бути виконана <strong>першою</strong> під час
+        виведення з експлуатації поточного інструменту, щоб якомога швидше продемонструвати цінність нового?
       </div>
 
       <div class="options">
         <label class="option">
           <input type="radio" name="ans2" value="a" />
-          <div><strong>a)</strong> The custom-built tool must be maintained and converted to the new environment.</div>
+          <div><strong>a)</strong> Підтримувати кастомний інструмент та адаптувати його до нового середовища.</div>
         </label>
 
         <label class="option">
           <input type="radio" name="ans2" value="b" />
-          <div><strong>b)</strong> The regression test scripts of the custom-built tool must be converted to the new tool.</div>
+          <div><strong>b)</strong> Перенести регресійні тест-скрипти з кастомного інструменту в новий інструмент.</div>
         </label>
 
         <label class="option">
           <input type="radio" name="ans2" value="c" />
-          <div><strong>c)</strong> The backup and restore functionalities of the custom-built tool must be maintained.</div>
+          <div><strong>c)</strong> Підтримувати функції резервного копіювання та відновлення кастомного інструменту.</div>
         </label>
 
         <label class="option">
           <input type="radio" name="ans2" value="d" />
-          <div><strong>d)</strong> All test scripts of the custom-built tool must be converted to the new tool.</div>
+          <div><strong>d)</strong> Перенести всі тест-скрипти з кастомного інструменту в новий інструмент.</div>
         </label>
       </div>
 
       <div class="actions">
-        <button class="primary" type="button" data-check="2">Check</button>
-        <button class="secondary" type="button" data-reset="2">Reset</button>
+        <button class="primary" type="button" data-check="2">Перевірити</button>
+        <button class="secondary" type="button" data-reset="2">Скинути</button>
       </div>
 
       <div id="result2" class="result" role="status" aria-live="polite">
-        Select an option and click <strong>Check</strong>.
+        Оберіть варіант і натисніть <strong>Перевірити</strong>.
       </div>
 
       <div class="nav">
-        <button class="secondary" type="button" data-prev>← Prev</button>
-        <button class="secondary" type="button" disabled>Next →</button>
+        <button class="secondary" type="button" data-prev>← Назад</button>
+        <button class="secondary" type="button" disabled>Далі →</button>
       </div>
 
       <div class="footer">
-        Tip: If you want this to behave like Kahoot (one question per screen with a timer), tell me and I’ll add a timer + auto-next.
+        Підказка: регресійні тести виконуються найчастіше — саме вони найшвидше показують цінність нового інструменту.
       </div>
     </section>
   </main>
 
   <script>
-    // Correct answers:
-    // Q1: c) Hence the correct answer is c) 1B, 2B, 3C, 4B.
-    // Q2: b) is correct (convert regression scripts first).
+    // Правильні відповіді:
+    // Питання 1: c) Отже, правильна відповідь — c) 1B, 2B, 3C, 4B.
+    // Питання 2: b) — перенести регресійні тести першими.
     const correct = { 1: "c", 2: "b" };
 
     const q1El = document.getElementById("q1");
@@ -178,7 +182,7 @@
     function showQuestion(n) {
       q1El.classList.toggle("active", n === 1);
       q2El.classList.toggle("active", n === 2);
-      progressPill.textContent = `Question ${n} of 2`;
+      progressPill.textContent = `Питання ${n} з 2`;
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
@@ -198,56 +202,54 @@
     function resetQuestion(qNum) {
       const checked = document.querySelector(`input[name="ans${qNum}"]:checked`);
       if (checked) checked.checked = false;
-      setResult(qNum, 'Select an option and click <strong>Check</strong>.', null);
+      setResult(qNum, 'Оберіть варіант і натисніть <strong>Перевірити</strong>.', null);
     }
 
-    // Check handlers
     document.querySelectorAll("[data-check]").forEach(btn => {
       btn.addEventListener("click", () => {
         const qNum = Number(btn.getAttribute("data-check"));
         const selected = getSelected(qNum);
 
         if (!selected) {
-          setResult(qNum, "Please select one option first.", "bad");
+          setResult(qNum, "Будь ласка, спочатку оберіть варіант.", "bad");
           return;
         }
 
         if (selected === correct[qNum]) {
           if (qNum === 1) {
             setResult(qNum, `
-              <strong>Correct ✅</strong><br><br>
-              Hence the correct answer is <strong>c)</strong> <code>1B, 2B, 3C, 4B</code>.
+              <strong>Правильно ✅</strong><br><br>
+              Отже, правильна відповідь — <strong>c)</strong> <code>1B, 2B, 3C, 4B</code>.
             `, "ok");
           } else {
             setResult(qNum, `
-              <strong>Correct ✅</strong><br><br>
-              <strong>b) is correct.</strong> This answer concerns retirement, as there are probably lots of existing scripts,
-              and regression test scripts are the ones used most often.
+              <strong>Правильно ✅</strong><br><br>
+              <strong>b) — правильна відповідь.</strong> Вона стосується виведення інструменту з експлуатації, оскільки
+              зазвичай існує багато тест-скриптів, а регресійні тести виконуються найчастіше.
               <ul>
-                <li>Regression test scripts are used most often to verify functionality and performance after changes/updates.</li>
-                <li>Converting regression scripts first enables a fast pilot/proof of concept.</li>
-                <li>You can quickly compare results and efficiency of the new tool vs. the old tool.</li>
+                <li>Регресійні тести найчастіше використовуються для перевірки функціональності та продуктивності після змін.</li>
+                <li>Їх перенесення першими дозволяє швидко провести пілот та proof of concept.</li>
+                <li>Це дає змогу оперативно порівняти ефективність нового інструменту зі старим.</li>
               </ul>
             `, "ok");
           }
         } else {
-          // Wrong selection
           if (qNum === 1) {
             setResult(qNum, `
-              <strong>Incorrect ❌</strong><br>
-              Please try again. Remember: monitoring & control focuses on tracking progress vs plan, and completion summarizes outcomes.
+              <strong>Неправильно ❌</strong><br>
+              Спробуйте ще раз. Пам’ятайте: моніторинг і контроль відстежують прогрес відносно плану,
+              а завершення тестування підсумовує результати.
             `, "bad");
           } else {
             setResult(qNum, `
-              <strong>Incorrect ❌</strong><br>
-              Please try again. To show value quickly, start with the scripts executed most frequently.
+              <strong>Неправильно ❌</strong><br>
+              Спробуйте ще раз. Щоб швидко показати цінність, починайте з тестів, які виконуються найчастіше.
             `, "bad");
           }
         }
       });
     });
 
-    // Reset handlers
     document.querySelectorAll("[data-reset]").forEach(btn => {
       btn.addEventListener("click", () => {
         const qNum = Number(btn.getAttribute("data-reset"));
@@ -255,12 +257,12 @@
       });
     });
 
-    // Navigation
     document.querySelector("[data-next]").addEventListener("click", () => showQuestion(2));
     document.querySelector("[data-prev]").addEventListener("click", () => showQuestion(1));
   </script>
 </body>
 </html>
+
 
 
     
